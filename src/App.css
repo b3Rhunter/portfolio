@@ -194,7 +194,7 @@ img {
   transition: transform 250ms ease-in;
 }
 
-.fancy-link:hover::after {
+.fancy-link:hover::after, .fancy-link:focus::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -205,6 +205,10 @@ img {
 
 h2 {
   padding-block: 0.5em;
+}
+
+h1 {
+  padding-block: 0.25em;
 }
 
 .projects-container {
