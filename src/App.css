@@ -27,6 +27,21 @@ input, textarea {
   color: white;
 }
 
+button {
+  transition: 0.3s;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, button:focus {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+button:active {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(4px);
+}
+
 .App-header {
   background-color: hsla(0, 0%, 100%, 1);
   background-image:
@@ -159,6 +174,10 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.loginBtn {
+  padding: 0.5em 1em;
+  color: white;
+}
 
 .project-card {
   flex: 0 0 auto;
@@ -248,6 +267,69 @@ h1 {
 .submit:active {
   box-shadow: 0 0px 15px rgba(255, 255, 255, 0.1);
   transform: translateY(3px);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 80vh;
+  z-index: 999;
+
+  background-color: #282c3471;
+  border: 1px solid white;
+  border-radius: 16px;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+.logIn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+
+  padding: 0.5em 1em;
+  border: 1px solid white;
+  border-radius: 50em;
+  font-size: 1rem;
+  background-color: #62666c7e;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.register {
+  padding: 0.5em 1em;
+  color: rgb(237, 235, 235);
+  background-color: rgba(74, 69, 69, 0.457);
+  border: 1px solid rgba(245, 242, 249, 0.377);
+  border-radius: 50em;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

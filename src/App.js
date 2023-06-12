@@ -3,9 +3,29 @@ import { useEffect, useState } from 'react';
 import aboutPic from './images/about.png';
 import projectsPic from './images/projects.png';
 import contactPic from './images/contact.png';
+import Register from './Register';
+import Login from './Login';
 
 function App() {
   
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') !== null);
+  const [registered, setRegistered] = useState(false)
+  const [logIn, setLogIn] = useState(false)
+
+  const openRegister = async () => {
+    setRegistered(true)
+    setLogIn(false)
+  }
+
+  const openLogIn = async () => {
+    setLogIn(true)
+    setRegistered(false)
+  }
+
+  const close = async () => {
+    setLogIn(false)
+    setRegistered(false)
+  }
 
   useEffect(() => {
     function smoothScroll(event) {
@@ -93,6 +113,30 @@ function App() {
 
 
       <footer className="App-footer">
+
+        <button className='register' onClick={openRegister}>Register</button>
+        <button className='logIn' onClick={openLogIn}>Sign-In</button>
+        
+    {registered && (
+      <div className='modal'>
+        <button className='close' onClick={close}>X</button>
+      <Register />
+      </div>
+    )}
+    {logIn && (
+      <div className='modal'>
+        <button className='close' onClick={close}>X</button>
+      <Login setLoggedIn={setLoggedIn} />
+      </div>
+    )}
+      
+
+      {loggedIn && (
+    <div>
+        <h2>Welcome to the logged-in section!</h2>
+        <p>This section is only visible to users who are logged in.</p>
+    </div>
+)}
         <h3><p>© 2023 Stanton Sailsbury</p></h3>
       </footer>
     </div>
