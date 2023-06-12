@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import aboutPic from './images/about.png';
 import projectsPic from './images/projects.png';
+import contactPic from './images/contact.png';
 
 function App() {
   
@@ -77,7 +78,7 @@ function App() {
       <section id="contact" className="App-content">
         <div className="container">
           <div className='item'>
-            <img src={aboutPic} alt="background" />
+            <img src={contactPic} alt="background" />
           </div>
           <div className='item'>
             <h2>Contact</h2>
